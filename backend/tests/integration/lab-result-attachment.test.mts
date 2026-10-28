@@ -117,7 +117,7 @@ describe('lab result attachment (issue #16)', () => {
 
     const otherDoctor = await user('other-doctor', 'doctor');
     tokens.otherDoctor = otherDoctor.token;
-    await prisma.doctorProfile.create({ data: { userId: otherDoctor.id, fullName: 'Unrelated Doctor', verificationStatus: 'verified' } });
+    await prisma.doctorProfile.create({ data: { userId: otherDoctor.id, fullName: 'Unrelated Doctor', timeZone: 'UTC', verificationStatus: 'verified' } });
 
     tokens.admin = (await user('admin', 'admin')).token;
 
